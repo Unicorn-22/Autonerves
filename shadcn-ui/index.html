@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTONERVES - Premium Vehicle Showroom</title>
+    <meta name="description" content="AUTONERVES - Connect with premium vehicle showrooms and find your dream car">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-car"></i>
+                <span>AUTONERVES</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#vehicles" class="nav-link">Vehicles</a>
+                <a href="#showrooms" class="nav-link">Showrooms</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <button class="login-btn">
+                    <i class="fas fa-user"></i>
+                    <span>Login</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">Premium Vehicle Marketplace</span>
+                <h1 class="hero-title">Find Your Dream Car</h1>
+                <p class="hero-description">
+                    Connect with premium vehicle showrooms worldwide. Discover luxury cars, supercars, 
+                    and exclusive vehicles from verified dealers.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('vehicles')">
+                        Browse Vehicles
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('showrooms')">
+                        View Showrooms
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Premium Vehicles</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Partner Showrooms</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicles Section -->
+    <section id="vehicles" class="vehicles">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Premium Vehicles</h2>
+                <p class="section-description">Discover our extensive collection of luxury and performance vehicles</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-container">
+                <div class="filters">
+                    <div class="filter-group">
+                        <input type="text" id="search-input" placeholder="Search vehicles..." class="search-input">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <label for="brand-filter" class="visually-hidden">Filter by Brand</label>
+                    <select id="brand-filter" class="filter-select" title="Filter by Brand">
+                        <option value="">All Brands</option>
+                    </select>
+                    <select id="type-filter" class="filter-select">
+                        <option value="">All Types</option>
+                    </select>
+                    <select id="fuel-filter" class="filter-select">
+                        <option value="">All Fuels</option>
+                    </select>
+                    <select id="price-filter" class="filter-select">
+                        <option value="">Price Range</option>
+                        <option value="0-100000">Under $100K</option>
+                        <option value="100000-200000">$100K - $200K</option>
+                        <option value="200000-300000">$200K - $300K</option>
+                        <option value="300000">Above $300K</option>
+                    </select>
+                    <select id="sort-filter" class="filter-select">
+                        <option value="name">Name A-Z</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="year">Newest First</option>
+                        <option value="horsepower">Most Powerful</option>
+                    </select>
+                    <button class="clear-filters-btn" id="clear-filters">Clear Filters</button>
+                </div>
+                <div class="results-info">
+                    <span id="results-count">0 vehicles found</span>
+                </div>
+            </div>
+
+            <!-- Vehicles Grid -->
+            <div class="vehicles-grid" id="vehicles-grid">
+                <!-- Vehicles will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Showrooms Section -->
+    <section id="showrooms" class="showrooms">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Partner Showrooms</h2>
+                <p class="section-description">Discover our network of premium vehicle showrooms worldwide</p>
+            </div>
+            <div class="showrooms-grid" id="showrooms-grid">
+                <!-- Showrooms will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose AUTONERVES?</h2>
+                <p class="section-description">We connect you with the world's most prestigious vehicle showrooms</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Verified Dealers</h3>
+                    <p class="feature-description">All our partner showrooms are verified and trusted</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="feature-title">Premium Quality</h3>
+                    <p class="feature-description">Only the finest vehicles make it to our platform</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">Expert Support</h3>
+                    <p class="feature-description">24/7 customer support for all your needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Ready to Find Your Perfect Vehicle?</h2>
+                <p class="section-description">Join thousands of satisfied customers who found their dream cars through AUTONERVES</p>
+                <button class="btn btn-primary" onclick="scrollToSection('vehicles')">
+                    Start Shopping Now
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-car"></i>
+                    <span>AUTONERVES</span>
+                </div>
+                <div class="footer-text">
+                    © 2024 AUTONERVES. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vehicle Detail Modal -->
+    <div id="vehicle-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modal-body">
+                <!-- Vehicle details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-header">
+                <h2>Shopping Cart</h2>
+            </div>
+            <div id="cart-items">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="cart-total">
+                <div class="total-row">
+                    <span>Total: </span>
+                    <span id="cart-total">$0</span>
+                </div>
+                <button class="btn btn-primary checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
